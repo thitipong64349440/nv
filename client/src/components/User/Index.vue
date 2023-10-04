@@ -12,6 +12,7 @@
             <button v-on:click="deleteUser(user)">ลบข้อมูล</button>
             <hr>
         </div>
+        <p><button v-on:click="logout">Logout</button></p>
     </div>
 </template>
 <script>
@@ -31,7 +32,7 @@ export default {
             this.$router.push(route)
         }
     },
-// ลบข้อมูล
+    // ลบข้อมูล
     methods: {
         navigateTo(route) {
             this.$router.push(route)
@@ -49,7 +50,19 @@ export default {
         },
         async refreshData() {
             this.users = (await UsersService.index()).data
-        }
+        },
+        async logout() {
+            this.$store.dispatch('setToken', null)
+            this.$store.dispatch('setUser', null)
+            this.$router.push({
+                name: 'login'
+            })
+            this.$router.push({
+                name: 'users'
+            })
+
+        },
+
     },
 
 
