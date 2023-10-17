@@ -2,7 +2,7 @@
     <div>
         <h1>Create User</h1>
         <form v-on:submit.prevent="createUser">
-            <!-- <p>รูป: <input type="file" v-on="user.image"></p> -->
+            <p>รูป: <input type="file" v-on="user.image"></p>
             <p>ชื่อ: <input type="text" v-model="user.name"></p>
             <p>นามสกุล: <input type="text" v-model="user.lastname"></p>
             <p>email: <input type="text" v-model="user.email"></p>
@@ -12,6 +12,7 @@
         </form>
         <hr>
         <div>
+            <p>รูป: {{ user.image }}</p>
             <p>name: {{ user.name }}</p>
             <p>lastname: {{ user.lastname }}</p>
             <p>email: {{ user.email }}</p>
@@ -26,11 +27,13 @@ export default {
     data() {
         return {
             user: {
+                image: '',
                 name: '',
                 lastname: '',
                 email: '',
                 password: '',
-                status: 'active'
+                status: 'active',
+                kuy: ''
             }
         }
     },
