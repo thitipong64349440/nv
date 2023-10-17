@@ -18,6 +18,12 @@ new Vue({
   el: '#app',
   router,
   store,
+  data: {
+    user: {
+      image: null // This will hold the selected file
+    }
+  },
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  
 })

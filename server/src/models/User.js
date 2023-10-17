@@ -20,7 +20,9 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         lastname: DataTypes.STRING,
         status: DataTypes.STRING,
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        image: DataTypes.STRING,
+        kuy: DataTypes.INTEGER,
     }, {
         hooks: {
             beforeCreate: hashPassword,
